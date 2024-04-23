@@ -10,9 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mantine/core": "^7.8.0",
+    "@nextui-org/react": "^2.3.5",
+    "@tabler/icons-react": "^3.2.0",
+    "autoprefixer": "^10.4.19",
     "bootstrap": "^5.3.3",
+    "framer-motion": "^11.1.7",
+    "postcss": "^8.4.38",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwindcss": "3.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
