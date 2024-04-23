@@ -12,6 +12,12 @@ export const ComponentDownCount = () => {
       const interval = setInterval(() => {
         const currentDate = new Date()
         const timeBetweenDates = Math.ceil((countToDate - currentDate.getTime()) / 1000)
+
+        if (countToDate+100 < currentDate.getTime()) {
+          clearInterval(interval)
+          return 
+        }
+
         flipAllCards(timeBetweenDates)
       
       }, 250)
@@ -19,9 +25,10 @@ export const ComponentDownCount = () => {
     }, [])
     
     function flipAllCards(time: number) {
+
         const seconds = time % 60
         const minutes = Math.floor(time / 60) % 60
-        const hours = Math.floor(time / 3600) % 24 // Aquí está la corrección
+        const hours = Math.floor(time / 3600) % 24 
         const days = Math.floor(time / 86400)
       
         flip(document.querySelector("[data-days-tens]"), Math.floor(days / 10))
