@@ -1,5 +1,4 @@
 import { useEffect } from "react"
-import React from 'react'
 import "../styles/styleDownCount.css"
 
 export const ComponentDownCount = () => {
@@ -9,14 +8,12 @@ export const ComponentDownCount = () => {
 
     const countToDate = new Date().setHours(new Date().getHours()) + millisecondsUntilMay4th
 
-    let previousTimeBetweenDates: number | undefined
     useEffect(() => {
       const interval = setInterval(() => {
         const currentDate = new Date()
         const timeBetweenDates = Math.ceil((countToDate - currentDate.getTime()) / 1000)
         flipAllCards(timeBetweenDates)
       
-        previousTimeBetweenDates = timeBetweenDates
       }, 250)
       return () => clearInterval(interval)
     }, [])
@@ -50,13 +47,13 @@ export const ComponentDownCount = () => {
       topFlip.textContent = startNumber.toString()
       bottomFlip.textContent = newNumber.toString()
     
-      topFlip.addEventListener("animationstart", e => {
+      topFlip.addEventListener("animationstart", () => {
         if (topHalf) topHalf.textContent = newNumber.toString()
       })
-      topFlip.addEventListener("animationend", e => {
+      topFlip.addEventListener("animationend", () => {
         topFlip.remove()
       })
-      bottomFlip.addEventListener("animationend", e => {
+      bottomFlip.addEventListener("animationend", () => {
         if (bottomHalf) bottomHalf.textContent = newNumber.toString()
         bottomFlip.remove()
       })

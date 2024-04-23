@@ -1,4 +1,3 @@
-import React from 'react'
 import "../styles/styleInstagram.css"
 
 export const ComponentInstagram = () => {
