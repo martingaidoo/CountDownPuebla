@@ -7,7 +7,7 @@ function App() {
 
           <div className='text-white'>
               <div className="container pt-2">
-                  <h1 className='text-center anton-regular'>OPENING</h1>
+                  <h1 className='text-center anton-regular'>RESET</h1>
                   <ComponentDownCount/>
               </div>
 
